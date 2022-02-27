@@ -1,0 +1,23 @@
+.block-img {
+    outline:1px solid black;
+    width: 854px;
+    height: 700px;
+    margin-top: 125px;
+    margin-left: 191px;
+}
+
+.btn-more-load {
+    margin-left: 191px;
+    width: 854px;
+    height: 40px;
+    color: aliceblue;
+    cursor: pointer;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+button {
+    all: unset;
+}
