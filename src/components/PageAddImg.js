@@ -1,23 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import './PageAddImg.css'
+import axios from "axios";
+import {NavLink} from "react-router-dom";
 
 
 const PageAddImg = ({preview}) => {
 
 
-    const [tag, setTeg] = useState("")
+    const [tag, setTeg] = useState([])
 
     const handleChangeTag = (e) => {
-        setTeg(e.currentTarget.value)
+        setTeg(e.currentTarget.value.split(","))
     }
     const handleClickSave = (e) => {
-        e.preventDefault();
 
-        //зафечить
+
+        axios.post('http://localhost:5000/imgList', {
+            url: preview,
+            tag
+        })
+            .then(res => res.data)
+            .then(res => {
+                console.log(res)
+            })
     }
 
+
+
     return (
-        <div className="container-add-img">
+        <form className="container-add-img">
             <div>
                 <p>Загрузить картинку</p>
                 <div className="preview-img">
@@ -30,12 +41,12 @@ const PageAddImg = ({preview}) => {
                 <div className="input-tag">
                     <textarea value={tag} onChange={handleChangeTag}/>
                 </div>
-                <div className="btn-save-img">
-                    <button onClick={handleClickSave}>Опубликовать</button>
+                <div className={!preview?"btn-save-img no-active": "btn-save-img"}>
+                    <NavLink to="/" onClick={handleClickSave}>Опубликовать</NavLink>
                 </div>
             </div>
 
-        </div>
+        </form>
 
     );
 };

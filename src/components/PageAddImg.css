@@ -7,7 +7,7 @@
 
 }
 
-.btn-save-img button{
+.btn-save-img a{
     margin-top: 20px;
     cursor: pointer;
     color: #FFFFFF;
@@ -69,4 +69,8 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
+}
+.no-active a{
+    background: #202020;
+    pointer-events: none;
 }

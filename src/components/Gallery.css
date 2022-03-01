@@ -1,23 +1,37 @@
 .block-img {
-    outline:1px solid black;
-    width: 854px;
-    height: 700px;
+    width: 870px;
+    max-height: 700px;
     margin-top: 125px;
-    margin-left: 191px;
-}
+    margin-left: 186px;
+    display: flex;
+    flex-wrap: wrap;
 
+}
+.block-img img {
+    width: 132px;
+    height: 132px;
+    margin:6px;
+}
 .btn-more-load {
-    margin-left: 191px;
     width: 854px;
     height: 40px;
+    margin: 25px 0px 25px 191px;
     color: aliceblue;
     cursor: pointer;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+}
+.hide {
+    display: none;
 }
 button {
     all: unset;
+}
+.picture-item {
+    margin: 5px;
+    width: 132px;
+    height: 132px;
+
 }

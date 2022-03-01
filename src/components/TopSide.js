@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import "./TopSide.css"
+import axios from "axios";
 
 const TopSide = ({getPreview}) => {
 
     const [personInput, setPersonInput] = useState("")
     const [selectedFile, setSelectedFile] = useState()
     const [preview, setPreview] = useState()
+
 
     useEffect(() => {
         if (!selectedFile) {
@@ -26,6 +28,7 @@ const TopSide = ({getPreview}) => {
         const el = document.getElementById('input_file')
         el.click()
     }
+
 
     getPreview(preview)
     return (

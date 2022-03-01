@@ -1,0 +1,98 @@
+{
+  "imgList": [
+    {
+      "id": 1,
+      "url": "https://avatars.mds.yandex.net/i?id=58a6b58852fad7bf56bb2611c30c3e3c-5875605-images-thumbs&n=13&exp=1",
+      "tag": "banana"
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "111",
+      "id": 2
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "222",
+      "id": 3
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "333",
+      "id": 4
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 5
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 6
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 7
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 8
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 9
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 10
+    },
+    {
+      "url": "https://avatars.mds.yandex.net/i?id=88d06fab0c8a8e65739683daf00a3b1c-4080268-images-thumbs&n=13&exp=1",
+      "tag": "",
+      "id": 11
+    },
+    {
+      "tag": [],
+      "id": 12
+    },
+    {
+      "url": "blob:http://localhost:3000/9f3d50a9-131f-41e2-8dbe-f7d1d1bd7f9f",
+      "tag": [
+        "fish",
+        "petuh"
+      ],
+      "id": 13
+    },
+    {
+      "url": "blob:http://localhost:3000/0e0d09e7-755e-4a3b-8fc2-0f4ae497d79b",
+      "tag": [
+        "111"
+      ],
+      "id": 14
+    },
+    {
+      "url": "blob:http://localhost:3000/e83ce07d-b019-4844-859d-bfed0178a7a5",
+      "tag": [],
+      "id": 15
+    },
+    {
+      "url": "blob:http://localhost:3000/a6451741-574e-442b-88e4-5f937931eb3e",
+      "tag": [],
+      "id": 16
+    },
+    {
+      "url": "blob:http://localhost:3000/993d7f70-0980-41c4-9887-9ec895afcc5b",
+      "tag": [],
+      "id": 17
+    },
+    {
+      "url": "blob:http://localhost:3000/9a90d3e2-0c68-4083-adee-daf13c5852cd",
+      "tag": [],
+      "id": 18
+    }
+  ]
+}
