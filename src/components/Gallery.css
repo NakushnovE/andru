@@ -11,6 +11,7 @@
     width: 132px;
     height: 132px;
     margin:6px;
+    cursor: pointer;
 }
 .btn-more-load {
     width: 854px;

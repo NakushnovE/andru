@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import './PageAddImg.css'
+import './PageEditImg.css'
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 
 
-const PageAddImg = ({preview, setFetch}) => {
+const PageEditImg = ({preview, setFetch}) => {
 
 
     const [tag, setTeg] = useState([])
@@ -12,10 +12,10 @@ const PageAddImg = ({preview, setFetch}) => {
     const handleChangeTag = (e) => {
         setTeg(e.currentTarget.value.split(","))
     }
-    const handleClickSave = (e) => {
+    /*const handleClickSave = (e) => {
 
 
-        axios.post('http://localhost:5000/imgList', {
+       axios.post('http://localhost:5000/imgList', {
             urlPicture: preview,
             tag
         })
@@ -24,7 +24,7 @@ const PageAddImg = ({preview, setFetch}) => {
                 console.log(res)
             })
         setFetch()
-    }
+    }*/
 
 
 
@@ -42,9 +42,14 @@ const PageAddImg = ({preview, setFetch}) => {
                 <div className="input-tag">
                     <textarea value={tag} onChange={handleChangeTag}/>
                 </div>
-                <div className={!preview?"btn-save-img no-active": "btn-save-img"}>
-                    <NavLink to="/" onClick={handleClickSave}>Опубликовать</NavLink>
+                <div className="btn-edit">
+                    <div className="btn-del-img">
+                        <NavLink to="/" >Удалить</NavLink>
+                    </div><div className={!preview?"btn-save-img no-active": "btn-save-img"}>
+                        <NavLink to="/" >Сохранить изменения</NavLink>
+                    </div>
                 </div>
+
             </div>
 
         </form>
@@ -52,4 +57,4 @@ const PageAddImg = ({preview, setFetch}) => {
     );
 };
 
-export default PageAddImg;
+export default PageEditImg;

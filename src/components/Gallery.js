@@ -1,28 +1,38 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Gallery.css"
+import {NavLink} from "react-router-dom";
+import {logDOM} from "@testing-library/react";
 
 
 
-const Gallery = ({searchByTag,imgList}) => {
+const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit}) => {
 
-    console.log(imgList)
+    console.log(pictures)
 
-    if(imgList.length < 30) {
+    const handleOpenEditImg = (e) => {
+        setClickOpenEditImg(true)
+        console.log(e)
+    }
+
+    if(pictures.length < 30) {
         const el = document.getElementsByClassName('btn-more-load')
         el.className = 'hide'
-        console.log(imgList.length)
+        console.log(pictures.length)
     }
+    useEffect(() => {
+
+    }, [pictures.length])
     
     return (
         <div className="container-gallery">
             <div>{searchByTag}</div>
             <div className="block-img">
-                {imgList.map(picture => (
-                    <img src={picture.url}/>
+                {pictures.map(picture => (
+                 <NavLink  key={picture.id} to="/editImg"><img onClick={(e)=>handleOpenEditImg(e.target)} src={picture.urlPicture}/></NavLink>
                     )
                 )}
             </div>
-            <div className={imgList.length  < 30?"btn-more-load hide":"btn-more-load"}>
+            <div className={pictures.length  < 30?"btn-more-load hide":"btn-more-load"}>
                 <button>Загрузить еще</button>
             </div>
         </div>
