@@ -3,41 +3,22 @@ import {NavLink} from "react-router-dom";
 import "./TopSide.css"
 import axios from "axios";
 
-const TopSide = ({getPreview}) => {
+const TopSide = ({onSelectFile}) => {
 
     const [personInput, setPersonInput] = useState("")
-    const [selectedFile, setSelectedFile] = useState()
-    const [preview, setPreview] = useState()
 
-
-    useEffect(() => {
-        if (!selectedFile) {
-            setPreview(undefined)
-            return
-        }
-        const objectUrl = URL.createObjectURL(selectedFile)
-        setPreview(objectUrl)
-
-        return () => URL.revokeObjectURL(objectUrl)
-    }, [selectedFile])
-
-    const onSelectFile = (e) => {
-        setSelectedFile(e.target.files[0])
-    }
     const triggerClickLoad = (e) => {
         const el = document.getElementById('input_file')
         el.click()
     }
 
-
-    getPreview(preview)
     return (
         <div className="top-side">
             <div className="upper-block">
                 <div>Pic<span>loader</span></div>
                 <div className="btn-load-img">
                     <div className="input-img">
-                        <input type="file" id="input_file" onChange={onSelectFile}></input>
+                        <input type="file" id="input_file" onChange={(e)=> onSelectFile(e)}></input>
                     </div>
                     <NavLink to="/addImg" onClick={(event)=>triggerClickLoad()}>Загрузить</NavLink>
                 </div>

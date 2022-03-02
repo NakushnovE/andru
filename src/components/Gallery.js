@@ -1,38 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import "./Gallery.css"
 import {NavLink} from "react-router-dom";
-import {logDOM} from "@testing-library/react";
+import axios from "axios";
 
 
 
-const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit}) => {
+const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit, setLimitPicture, limitPicture}) => {
 
-    console.log(pictures)
+
+    const [clickLoadMore, setClickLoadMore] = useState(false)
 
     const handleOpenEditImg = (picture) => {
         setClickOpenEditImg(picture)
         console.log(picture.urlPicture)
     }
-
-    if(pictures.length < 30) {
-        const el = document.getElementsByClassName('btn-more-load')
-        el.className = 'hide'
-        console.log(pictures.length)
+    const handleLoadMore = () => {
+        setLimitPicture(limitPicture += 30)
     }
-    useEffect(() => {
 
-    }, [pictures.length])
-    
+
     return (
         <div className="container-gallery">
-            <div>{searchByTag}</div>
+            <div>{searchByTag? {searchByTag}: "Ключевое слово"}</div>
             <div className="block-img">
                 {pictures.map(picture => (
                  <NavLink  key={picture.id} to="/editImg"><img onClick={()=>handleOpenEditImg(picture)} src={picture.urlPicture}/></NavLink>
                     )
                 )}
             </div>
-            <div className={pictures.length  < 30?"btn-more-load hide":"btn-more-load"}>
+            <div className={pictures.length  < limitPicture?"btn-more-load hide":"btn-more-load"} onClick={()=> handleLoadMore()}>
                 <button>Загрузить еще</button>
             </div>
         </div>

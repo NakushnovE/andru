@@ -26,8 +26,6 @@ const PageAddImg = ({preview, setFetch}) => {
         setFetch()
     }
 
-
-
     return (
         <form className="container-add-img">
             <div>

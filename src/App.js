@@ -13,11 +13,12 @@ function App() {
     const [preview, setPreview] = useState()
     const [clickOpenEditImg, setClickOpenEditImg] = useState()
     const [previewFromEdit, setPreviewFromEdit] = useState()
+    const [limitPicture, setLimitPicture] = useState(30)
 
     const getPreview = (preview) => {
         setPreview(preview)
     }
-    let limitPicture = 30
+
     const url = `http://localhost:5000/imgList?_limit=${limitPicture}`
 
     const [{pictures, isLoading}, setFetch] = useFetch(url)
@@ -28,13 +29,30 @@ function App() {
     },[setFetch, url, pictures.length])
 
 
+    const [selectedFile, setSelectedFile] = useState()
 
+
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined)
+            return
+        }
+        const objectUrl = URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        return () => URL.revokeObjectURL(objectUrl)
+    }, [selectedFile])
+
+
+    const onSelectFile = (e) => {
+        setSelectedFile(e.target.files[0])
+    }
 
   return (
       <BrowserRouter>
-          <TopSide getPreview={getPreview}/>
+          <TopSide onSelectFile={onSelectFile}/>
           <Routes>
-              <Route path='' element={<Gallery pictures={pictures} setClickOpenEditImg={setClickOpenEditImg} setPreviewFromEdit={setPreviewFromEdit}/>}/>
+              <Route path='' element={<Gallery limitPicture={limitPicture} setLimitPicture={setLimitPicture} setFetch={setFetch} pictures={pictures} setClickOpenEditImg={setClickOpenEditImg} setPreviewFromEdit={setPreviewFromEdit}/>}/>
               <Route path='addImg' element={<PageAddImg preview={preview} setFetch={setFetch}/>}/>
               {clickOpenEditImg?<Route path='editImg' element={<PageEditImg clickOpenEditImg={clickOpenEditImg}/>}/>: null}
           </Routes>

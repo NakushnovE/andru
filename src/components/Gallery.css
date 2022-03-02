@@ -1,11 +1,15 @@
+.container-gallery {
+    display: inline-flex;
+    flex-direction: column;
+}
 .block-img {
     width: 870px;
-    max-height: 700px;
+    max-height: 870px;
     margin-top: 125px;
     margin-left: 186px;
-    display: flex;
-    flex-wrap: wrap;
-
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
 }
 .block-img img {
     width: 132px;
@@ -14,9 +18,9 @@
     cursor: pointer;
 }
 .btn-more-load {
-    width: 854px;
+    width: 860px;
     height: 40px;
-    margin: 25px 0px 25px 191px;
+    margin: 15px 0px 25px 191px;
     color: aliceblue;
     cursor: pointer;
     background-color: black;
