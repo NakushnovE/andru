@@ -11,7 +11,7 @@ import PageEditImg from "./components/PageEditImg";
 function App() {
 
     const [preview, setPreview] = useState()
-    const [clickOpenEditImg, setClickOpenEditImg] = useState(false)
+    const [clickOpenEditImg, setClickOpenEditImg] = useState()
     const [previewFromEdit, setPreviewFromEdit] = useState()
 
     const getPreview = (preview) => {
@@ -28,13 +28,15 @@ function App() {
     },[setFetch, url, pictures.length])
 
 
+
+
   return (
       <BrowserRouter>
           <TopSide getPreview={getPreview}/>
           <Routes>
               <Route path='' element={<Gallery pictures={pictures} setClickOpenEditImg={setClickOpenEditImg} setPreviewFromEdit={setPreviewFromEdit}/>}/>
               <Route path='addImg' element={<PageAddImg preview={preview} setFetch={setFetch}/>}/>
-              {clickOpenEditImg?<Route path='editImg' element={<PageEditImg />}/>: null}
+              {clickOpenEditImg?<Route path='editImg' element={<PageEditImg clickOpenEditImg={clickOpenEditImg}/>}/>: null}
           </Routes>
 
       </BrowserRouter>

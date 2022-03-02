@@ -24,7 +24,7 @@ const TopSide = ({getPreview}) => {
     const onSelectFile = (e) => {
         setSelectedFile(e.target.files[0])
     }
-    const triggerClick = (e) => {
+    const triggerClickLoad = (e) => {
         const el = document.getElementById('input_file')
         el.click()
     }
@@ -39,7 +39,7 @@ const TopSide = ({getPreview}) => {
                     <div className="input-img">
                         <input type="file" id="input_file" onChange={onSelectFile}></input>
                     </div>
-                    <NavLink to="/addImg" onClick={(event)=>triggerClick()}>Загрузить</NavLink>
+                    <NavLink to="/addImg" onClick={(event)=>triggerClickLoad()}>Загрузить</NavLink>
                 </div>
             </div>
 

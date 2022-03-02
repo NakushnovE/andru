@@ -9,9 +9,9 @@ const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit
 
     console.log(pictures)
 
-    const handleOpenEditImg = (e) => {
-        setClickOpenEditImg(true)
-        console.log(e)
+    const handleOpenEditImg = (picture) => {
+        setClickOpenEditImg(picture)
+        console.log(picture.urlPicture)
     }
 
     if(pictures.length < 30) {
@@ -28,7 +28,7 @@ const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit
             <div>{searchByTag}</div>
             <div className="block-img">
                 {pictures.map(picture => (
-                 <NavLink  key={picture.id} to="/editImg"><img onClick={(e)=>handleOpenEditImg(e.target)} src={picture.urlPicture}/></NavLink>
+                 <NavLink  key={picture.id} to="/editImg"><img onClick={()=>handleOpenEditImg(picture)} src={picture.urlPicture}/></NavLink>
                     )
                 )}
             </div>

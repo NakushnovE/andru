@@ -4,28 +4,28 @@ import axios from "axios";
 import {NavLink} from "react-router-dom";
 
 
-const PageEditImg = ({preview, setFetch}) => {
+const PageEditImg = ({setFetch, clickOpenEditImg}) => {
 
 
-    const [tag, setTeg] = useState([])
+    const [tag, setTeg] = useState(clickOpenEditImg.tag)
+
+
 
     const handleChangeTag = (e) => {
         setTeg(e.currentTarget.value.split(","))
     }
-    /*const handleClickSave = (e) => {
 
-
-       axios.post('http://localhost:5000/imgList', {
-            urlPicture: preview,
+    const deleteImg = (id) => {
+        axios.delete(`http://localhost:5000/imgList/${id}`)
+        setFetch()
+    }
+    const editImg = (id) => {
+        axios.put(`http://localhost:5000/imgList/${id}`, {
+            urlPicture: clickOpenEditImg.urlPicture,
             tag
         })
-            .then(res => res.data)
-            .then(res => {
-                console.log(res)
-            })
         setFetch()
-    }*/
-
+    }
 
 
     return (
@@ -33,7 +33,7 @@ const PageEditImg = ({preview, setFetch}) => {
             <div>
                 <p>Загрузить картинку</p>
                 <div className="preview-img">
-                    <img src={preview}/>
+                    <img src={clickOpenEditImg.urlPicture}/>
                 </div>
             </div>
 
@@ -44,9 +44,9 @@ const PageEditImg = ({preview, setFetch}) => {
                 </div>
                 <div className="btn-edit">
                     <div className="btn-del-img">
-                        <NavLink to="/" >Удалить</NavLink>
-                    </div><div className={!preview?"btn-save-img no-active": "btn-save-img"}>
-                        <NavLink to="/" >Сохранить изменения</NavLink>
+                        <NavLink to="/"  onClick={()=>deleteImg(clickOpenEditImg.id)}>Удалить</NavLink>
+                    </div><div className="btn-edit-img">
+                        <NavLink to="/" onClick={()=>editImg(clickOpenEditImg.id)}>Сохранить изменения</NavLink>
                     </div>
                 </div>
 
