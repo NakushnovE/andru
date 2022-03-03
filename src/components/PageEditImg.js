@@ -29,7 +29,7 @@ const PageEditImg = ({setFetch, clickOpenEditImg}) => {
 
 
     return (
-        <form className="container-add-img">
+        <form className="container-edit-img">
             <div>
                 <p>Загрузить картинку</p>
                 <div className="preview-img">
@@ -37,7 +37,7 @@ const PageEditImg = ({setFetch, clickOpenEditImg}) => {
                 </div>
             </div>
 
-            <div className="block-btn-add-img">
+            <div className="block-btn-edit-img">
                 <p>Ключевые слова</p>
                 <div className="input-tag">
                     <textarea value={tag} onChange={handleChangeTag}/>

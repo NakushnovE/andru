@@ -2,7 +2,7 @@ a {
     all: unset;
 }.top-side {
     color: aliceblue;
-    margin-left: 193px;
+    width: 854px;
     margin-top: 26px;
 }
 .btn-load-img {
@@ -26,7 +26,6 @@ a {
     height: 100%;
 }
 .search-img {
-    position: absolute;
     width: 854px;
     height: 53px;
     left: 191px;

@@ -1,9 +1,8 @@
 .container-add-img {
-    margin-top: 80px;
+    margin-top: 10px;
     display: flex;
     justify-content:space-between;
     width: 854px;
-    margin-left: 191px;
 
 }
 
@@ -29,8 +28,7 @@
     border-radius: 5%;
     width: 324px;
     height: 324px;
-    background: url("ff.jpg");
-    background-position: center;
+    background: url("ff.jpg") center;
     background-size: cover;
     overflow: hidden;
     border: hidden;

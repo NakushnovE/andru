@@ -1,9 +1,9 @@
-.container-add-img {
-    margin-top: 80px;
+.container-edit-img {
+    margin-top: 10px;
     display: flex;
     justify-content:space-between;
     width: 854px;
-    margin-left: 191px;
+
 
 }
 
@@ -63,7 +63,7 @@
     border: none;
     resize:none
 }
-.container-add-img p {
+.container-edit-img p {
     color: #8C8C8C;
     font-family: Roboto;
     font-style: normal;

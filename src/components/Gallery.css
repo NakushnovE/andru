@@ -1,14 +1,11 @@
 .container-gallery {
-    display: inline-flex;
-    flex-direction: column;
+
 }
 .block-img {
-    width: 870px;
-    max-height: 870px;
-    margin-top: 125px;
-    margin-left: 186px;
+    width: 854px;
+    height: auto;
+    margin-left: -5px;
     display: grid;
-    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
 }
 .block-img img {
@@ -18,9 +15,9 @@
     cursor: pointer;
 }
 .btn-more-load {
-    width: 860px;
+    width: 854px;
     height: 40px;
-    margin: 15px 0px 25px 191px;
+    margin: 15px 0px 25px 0px;
     color: aliceblue;
     cursor: pointer;
     background-color: black;
@@ -39,4 +36,14 @@ button {
     width: 132px;
     height: 132px;
 
+}
+.desired {
+    margin-top: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    height: 25px;
 }

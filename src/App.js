@@ -50,12 +50,15 @@ function App() {
 
   return (
       <BrowserRouter>
-          <TopSide onSelectFile={onSelectFile}/>
-          <Routes>
-              <Route path='' element={<Gallery limitPicture={limitPicture} setLimitPicture={setLimitPicture} setFetch={setFetch} pictures={pictures} setClickOpenEditImg={setClickOpenEditImg} setPreviewFromEdit={setPreviewFromEdit}/>}/>
-              <Route path='addImg' element={<PageAddImg preview={preview} setFetch={setFetch}/>}/>
-              {clickOpenEditImg?<Route path='editImg' element={<PageEditImg clickOpenEditImg={clickOpenEditImg}/>}/>: null}
-          </Routes>
+          <div className="app-container">
+              <TopSide onSelectFile={onSelectFile}/>
+              <Routes>
+                  <Route path='' element={<Gallery limitPicture={limitPicture} setLimitPicture={setLimitPicture} setFetch={setFetch} pictures={pictures} setClickOpenEditImg={setClickOpenEditImg} setPreviewFromEdit={setPreviewFromEdit}/>}/>
+                  <Route path='addImg' element={<PageAddImg preview={preview} setFetch={setFetch}/>}/>
+                  {clickOpenEditImg?<Route path='editImg' element={<PageEditImg clickOpenEditImg={clickOpenEditImg}/>}/>: null}
+              </Routes>
+          </div>
+
 
       </BrowserRouter>
 

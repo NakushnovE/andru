@@ -21,7 +21,7 @@ const Gallery = ({searchByTag, pictures, setClickOpenEditImg, setPreviewFromEdit
 
     return (
         <div className="container-gallery">
-            <div>{searchByTag? {searchByTag}: "Ключевое слово"}</div>
+            <div className="desired">{searchByTag? {searchByTag}: null}</div>
             <div className="block-img">
                 {pictures.map(picture => (
                  <NavLink  key={picture.id} to="/editImg"><img onClick={()=>handleOpenEditImg(picture)} src={picture.urlPicture}/></NavLink>
